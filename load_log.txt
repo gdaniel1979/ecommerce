@@ -1,0 +1,78 @@
+======================================================================
+Run summary: 2025-10-30 19:01:53
+======================================================================
+Table consumer_behavior loaded.
+2019501 rows loaded successfully.
+Loading of 0 rows failed.
+Elapsed time: 200.31 seconds.
+Every chunk successfully loaded. ✅
+
+
+======================================================================
+Run summary: 2025-10-30 15:21:52
+======================================================================
+Table consumer_behavior loaded.
+2019501 rows loaded successfully.
+Loading of 0 rows failed.
+Elapsed time: 205.58 seconds.
+Every chunk successfully loaded. ✅
+
+
+
+=== New run: 2025-10-30 14:18:38.129123 ===
+Table: consumer_behaviorError at truncating table - (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: fe_sendauth: no password supplied
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+=== New run: 2025-10-30 14:19:41.987632 ===
+Table: consumer_behaviorError at truncating table - (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: fe_sendauth: no password supplied
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+=== New run: 2025-10-30 14:23:26.181688 ===
+Table: consumer_behaviorError at truncating table - Not an executable object: 'TRUNCATE TABLE consumer_behavior;'
+=== New run: 2025-10-30 14:26:29.469975 ===
+Table: consumer_behaviorTable successfully truncated ✅
+Chunk 1: 50000 rows successfully loaded.
+Chunk 2: 50000 rows successfully loaded.
+Chunk 3: 50000 rows successfully loaded.
+Chunk 4: 50000 rows successfully loaded.
+Chunk 5: 50000 rows successfully loaded.
+Chunk 6: 50000 rows successfully loaded.
+Chunk 7: 50000 rows successfully loaded.
+Chunk 8: 50000 rows successfully loaded.
+Chunk 9: 50000 rows successfully loaded.
+Chunk 10: 50000 rows successfully loaded.
+Chunk 11: 50000 rows successfully loaded.
+Chunk 12: 50000 rows successfully loaded.
+Chunk 13: 50000 rows successfully loaded.
+Chunk 14: 50000 rows successfully loaded.
+Chunk 15: 50000 rows successfully loaded.
+Chunk 16: 50000 rows successfully loaded.
+Chunk 17: 50000 rows successfully loaded.
+Chunk 18: 50000 rows successfully loaded.
+Chunk 19: 50000 rows successfully loaded.
+Chunk 20: 50000 rows successfully loaded.
+Chunk 21: 50000 rows successfully loaded.
+Chunk 22: 50000 rows successfully loaded.
+Chunk 23: 50000 rows successfully loaded.
+Chunk 24: 50000 rows successfully loaded.
+Chunk 25: 50000 rows successfully loaded.
+Chunk 26: 50000 rows successfully loaded.
+Chunk 27: 50000 rows successfully loaded.
+Chunk 28: 50000 rows successfully loaded.
+Chunk 29: 50000 rows successfully loaded.
+Chunk 30: 50000 rows successfully loaded.
+Chunk 31: 50000 rows successfully loaded.
+Chunk 32: 50000 rows successfully loaded.
+Chunk 33: 50000 rows successfully loaded.
+Chunk 34: 50000 rows successfully loaded.
+Chunk 35: 50000 rows successfully loaded.
+Chunk 36: 50000 rows successfully loaded.
+Chunk 37: 50000 rows successfully loaded.
+Chunk 38: 50000 rows successfully loaded.
+Chunk 39: 50000 rows successfully loaded.
+Chunk 40: 50000 rows successfully loaded.
+Chunk 41: 19501 rows successfully loaded.
+--- Summary ---Rows loaded: 2019501
+Failed rows: 0
+Run time:  202.81 seconds
+--------------------------------

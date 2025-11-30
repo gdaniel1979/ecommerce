@@ -1,0 +1,88 @@
+import psycopg2
+import yaml
+import pandas as pd
+
+def get_top_products_by_department(department_name, limit):
+    try:
+        # yaml beolvasás
+        yaml_path="/home/gdaniel1979/auth/ecommerce.yaml"
+        with open(yaml_path, 'r') as f:
+            config = yaml.safe_load(f)
+        db_config = config['database']
+
+        # psycopg2-kapcsolódás PostgreSQL-hez
+        conn = psycopg2.connect(
+            host = db_config['host'],
+            port = db_config['port'],
+            dbname = db_config['dbname'],
+            user = db_config['user'],
+            password = db_config['password']
+        )
+
+        cursor = conn.cursor()
+
+        # SQL Lekérdezés
+        query = """
+        SQL, %s
+        """
+
+        # Pandas Dataframe-be való olvasás
+        df = pd.read_sql_query(query, conn, params=(department_name, limit))
+        conn.close()
+
+        return df
+
+    except Exception as e:
+        print("Hiba történt:", e)
+        return None
+
+df_top = get_top_products_by_department("pantry", 5)
+df_top
+
+
+
+
+
+
+
+
+
+
+import pandas as pd
+import yaml
+from sqlalchemy import create_engine, text
+
+def get_top_products_by_department(department_name, limit):
+    try:
+        # 1. YAML beolvasása
+        yaml_path = "/home/gdaniel1979/auth/ecommerce.yaml"
+        with open(yaml_path, 'r') as f:
+            config = yaml.safe_load(f)
+
+        db = config['database']
+
+        # 2. SQLAlchemy connection string
+        conn_str = (
+            f"postgresql+psycopg2://{db['user']}:{db['password']}@"
+            f"{db['host']}:{db['port']}/{db['dbname']}"
+        )
+
+        # 3. Engine létrehozása
+        engine = create_engine(conn_str)
+
+        # 4. SQL lekérdezés
+        sql = text("""
+            SQL, pl. :dept
+        """)
+
+        # 5. Eredmény betöltése DataFrame-be
+        df = pd.read_sql(sql, engine, params={"dept": department_name, "lim": limit})
+
+        return df
+
+    except Exception as e:
+        print("Hiba történt:", e)
+        return None
+
+df_top = get_top_products_by_department("dairy eggs", 5)
+df_top
